@@ -1,0 +1,59 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post second</title>
+    <link href="./build/tailwind.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 flex justify-center items-center h-screen">
+    <!-- <button class="btn-primary rounded-full bg-green-300">Save changes</button> -->
+   <div class="w-56">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla saepe distinctio fuga nam non enim totam, aliquid eos laborum, quibusdam, tempore mollitia suscipit error asperiores quis. In suscipit pariatur deserunt?</div>
+    <div x-data="{ isOpen: false }" class="relative">
+      <button
+        @click="isOpen = !isOpen"
+        class="z-10 relative px-4 py-2 bg-blue-500 text-white rounded-lg inline-flex items-center focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white"
+      >
+        <span> show more</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 ml-1"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+      </button>
+      <button
+        x-show="isOpen"
+        @click="isOpen = false"
+        class="inset-0 fixed w-full h-full bg-gray-200 opacity-70"
+      ></button>
+      <div
+        x-show="isOpen"
+        @click="isOpen = false"
+        class="bg-white w-56 mt-2 rounded-lg overflow-hidden border border-gray-200 absolute"
+      >
+        <a href="#" class="block text-gray-700 p-2 hover:bg-gray-200"
+          >account</a
+        >
+        <a href="#" class="block text-gray-700 p-2 hover:bg-gray-200"
+          >support</a
+        >
+        <a href="#" class="block text-gray-700 p-2 hover:bg-gray-200"
+          >settings</a
+        >
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
